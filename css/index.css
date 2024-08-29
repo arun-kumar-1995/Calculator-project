@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  /* page setup */
+  --min-height: 100vh;
+  --min-width: 320px;
+  --max-width: 100vw;
+  --base-size: 10px;
+  /* margin and padding */
+
+  --mg-5: 0 0.5em;
+  --mg-1: 0 1em;
+  --mg-2: 0 2em;
+
+  --pd-04: 0.4rem;
+  --pd-08: 0.8rem;
+  --pd-12: 1.2rem;
+
+  /* font weight */
+  --font-regular: 400;
+  --font-semi: 600;
+  --font-bold: 800;
+
+  /* typography */
+  --body-text: "Open Sans", sans-serif;
+  /* color */
+  --clr-primary: #00abe5;
+  --clr-white: #f5f4f6;
+  --clr-secondary: #94ede7;
+  --clr-secondary-2: #dbf3fb;
+  --clr-tertiary: #68ddfc;
+  --clr-border: #b4a9a9;
+  --clr-text: rgb(29, 25, 25);
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--body-text);
+  font-weight: 400;
+}
+
+button,
+textarea {
+  font-family: inherit !important;
+  font-size: 100%;
+  line-height: 1.25;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+button:hover,
+button:focus {
+  background-color: var(--clr-secondary-2);
+}
+
+body {
+  min-width: var(--min-width);
+  min-height: var(--min-height);
+  max-width: var(--max-width);
+  color: var(--clr-text);
+}
+
+/* style */
+main {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: var(--min-height);
+}
+
+/* --- calculator */
+main #app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* --- screen -----*/
+main #screen {
+  width: 100%;
+  min-height: 20vh;
+  background-color: var(--clr-primary);
+  border-radius: 0.2rem;
+  padding:0.8rem;
+}
+
+/* --- calculator body*/
+.app-body {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(4, minmax(6rem, 1fr));
+  padding: 0.8em 0 0 0;
+  width: 100%;
+}
+
+/* --- calculator body------ */
+.app-body button {
+  outline: 1px solid var(--clr-border);
+  padding: var(--pd-12) var(--pd-08);
+  /* border-radius: 0.2rem; */
+  /* box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.colspan-2 {
+  grid-column: span 2;
+}
+.rowspan-2 {
+  grid-row: span 2;
+}
+button.digit {
+  background-color: var(--clr-white);
+}
+
+button.arithematic {
+  background-color: var(--clr-secondary-2);
+}
+button.operation {
+    background-color: var(--clr-secondary);
+}
+.clr-red {
+  background-color: rgb(233, 83, 83);
+}
+.clr-black {
+  background-color: rgb(29, 25, 25);
+}
